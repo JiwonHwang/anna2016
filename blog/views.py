@@ -5,7 +5,6 @@ from .forms import PostForm, CommentForm
 from .models import Post, Comment
 
 
-
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
@@ -93,3 +92,7 @@ def comment_remove(request, pk):
     post_pk = comment.post.pk
     comment.delete()
     return redirect('blog.views.post_detail', pk=post_pk)
+
+
+def calendar(request):
+    return render(request, 'blog/calendar.html', {'calendar': calendar})

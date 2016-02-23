@@ -4,7 +4,7 @@ h1 a {
 }
 
 body {
-    padding-left: : 30px;
+    padding-left: : 0px;
     height: 200px;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 .content{
-    margin-left: 40px;
+    margin-left: 20px;
 }
 
 h1, h2, h3, h4 {
@@ -44,7 +44,8 @@ h1, h2, h3, h4 {
 }
 
 .post {
-    margin-bottom: 70px;
+    margin: 10px;
+    padding: 10px;
 }
 
 .post h1 a, .post h1 a:visited {
@@ -74,6 +75,23 @@ table {
     margin-top: 20px;
     border-spacing: 50px;
     background-color:  #CEF6F5;
-
 }
 
+div.calendar {
+    margin: 0px;
+}
+
+div.post {
+    border: solid #04B4AE 5px;
+    padding: 10px;
+    margin:10px;
+    margin-bottom: 10px;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 30;
+    right: 30;
+    width: 10px;
+    color: #04B4AE ;
+}

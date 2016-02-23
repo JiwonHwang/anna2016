@@ -1,10 +1,13 @@
 from django.db import models
 from django.utils import timezone
+from tinymce.models import HTMLField
+
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
+    image = models.ImageField(blank=True)
     created_date = models.DateTimeField(
         default=timezone.now)
     published_date = models.DateTimeField(
@@ -40,5 +43,6 @@ class Comment(models.Model):
     def __str__(self):
         return self.text
 
-
-
+# admin - text editor
+class MyModel(models.Model):
+    content = HTMLField()

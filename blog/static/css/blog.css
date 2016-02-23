@@ -1,14 +1,15 @@
 h1 a {
     color: #BE81F7;
-    font-family: 'Lobster';
+    font-family: 'Maven Pro';
 }
 
 body {
     padding-left: : 30px;
+    height: 200px;
 }
 
 .page-header {
-    background-color:  #BE81F7;
+    background-color:  #04B4AE;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -24,7 +25,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Maven Pro', cursive;
 }
 
 .save{
@@ -47,10 +48,19 @@ h1, h2, h3, h4 {
 }
 
 .post h1 a, .post h1 a:visited {
-    color: #BE81F7;
+    color: #04B4AE;
 }
 
 .comment{
     margin: 20px 0px 20px 20px;
 }
 
+---
+.content {
+    float: left;
+    margin: 5px;
+    padding: 15px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+}

@@ -1,0 +1,97 @@
+h1 a {
+    color: #04B4AE;
+    font-family: 'Maven Pro';
+}
+
+body {
+    padding-left: : 0px;
+    height: 200px;
+}
+
+.page-header {
+    background-color:  #04B4AE;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.content{
+    margin-left: 20px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Maven Pro', cursive;
+}
+
+.save{
+    float: right;
+}
+
+.post-form textarea, .post-from input{
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}
+
+.post {
+    margin: 10px;
+    padding: 10px;
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #04B4AE;
+}
+
+.comment{
+    margin: 20px 0px 20px 20px;
+}
+
+---
+.content {
+    float: left;
+    margin: 5px;
+    padding: 15px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+table, th, td {
+    border: 1px solid transparent;
+    padding: 10px;
+}
+
+table {
+    margin-top: 20px;
+    border-spacing: 50px;
+    background-color:  #CEF6F5;
+}
+
+div.calendar {
+    margin: 0px;
+}
+
+div.post {
+    border: solid #04B4AE 5px;
+    padding: 10px;
+    margin:10px;
+    margin-bottom: 10px;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 30;
+    right: 30;
+    width: 10px;
+    color: #04B4AE ;
+}

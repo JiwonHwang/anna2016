@@ -1,0 +1,76 @@
+{% load staticfiles %}
+
+<html>
+    <head>
+        <!--tinymce text editor https://www.tinymce.com/docs/get-started/first-steps/-->
+        <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+         <script type="text/javascript">
+          tinymce.init({
+            selector: '#myTextarea',
+            plugins: 'code',
+            toolbar: 'code',
+            menubar: false,
+            plugins: 'advlist',
+            theme: 'modern',
+            width: 600,
+            height: 300,
+            plugins: [
+              'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+              'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+              'save table contextmenu directionality emoticons template paste textcolor'
+            ],
+            content_css: 'css/content.css',
+            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons', 'bullist, numlist'
+            advlist_bullet_styles: 'square',
+            advlist_number_styles: 'lower-alpha,lower-roman,upper-alpha,upper-roman'
+          });
+        </script> 
+        <link href="http://fonts.googleapis.com/css?family=Maven Pro&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <title>Jiwon - Coding Blog</title>
+    </head>
+
+    <body>
+        <div class="page-header">
+            {% if user.is_authenticated %}
+                <a href="{% url 'calendar' %}" class="top-menu"><span class="glyphicon glyphicon-calendar"></a>
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                <p class="top-menu">Hello {{ user.username }}<small>(<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</p>
+            {% else %}
+                <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+            {% endif %}
+                <h1><a href="{% url 'blog.views.post_list' %}">Jiwon - Coding Blog</a></h1>
+        </div>
+
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <div class="fixed">
+            <a href="#top"><strong>Top</strong></a>
+        </div>
+
+</html>
+
+
+
+<script type="text/javascript" src="{{MEDIA_URL}}fckeditor/fckeditor.js"></script>
+<script type="text/javascript" src="{{MEDIA_URL}}django_rtf.js"></script>
+
+
+<!-- <table id="table-footer">
+       <tr>
+          <td><bold><a href="https://djangogirls.org/seoul/" target="_blank"><strong>Django Girls Seoul</strong></a></bold> Winter Code Camp Jan-Feb 2016</td>
+          <td><a href="#top"><strong>Top</strong></a></td>
+          <td><a href="#top" class="footer"><span class="glyphicon glyphicon-triangle-top"></span></a></td>
+        </tr>
+      </table>
+      </div> -->

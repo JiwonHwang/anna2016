@@ -6,7 +6,7 @@
         <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
          <script type="text/javascript">
           tinymce.init({
-            selector: '#myTextarea',
+            selector: '.tinymce',
             plugins: 'code',
             toolbar: 'code',
             menubar: false,
@@ -20,7 +20,7 @@
               'save table contextmenu directionality emoticons template paste textcolor'
             ],
             content_css: 'css/content.css',
-            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons', 'bullist, numlist'
+            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons',
             advlist_bullet_styles: 'square',
             advlist_number_styles: 'lower-alpha,lower-roman,upper-alpha,upper-roman'
           });
@@ -60,10 +60,6 @@
 
 </html>
 
-
-
-<script type="text/javascript" src="{{MEDIA_URL}}fckeditor/fckeditor.js"></script>
-<script type="text/javascript" src="{{MEDIA_URL}}django_rtf.js"></script>
 
 
 <!-- <table id="table-footer">

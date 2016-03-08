@@ -16,7 +16,7 @@
         <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}" style="float: right;"><span class="glyphicon glyphicon-trash"></span></a>
         {% endif %}
         <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaks }}</p>
+        <p>{{ post.text|safe }}</p>
     </div>
     <hr>
     <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>

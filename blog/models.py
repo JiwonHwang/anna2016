@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from django.utils import timezone
 from tinymce.models import HTMLField
@@ -13,18 +15,17 @@ class Post(models.Model):
     published_date = models.DateTimeField(
         blank=True, null=True)
 
-
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()
-
     def __str__(self):
         return self.title
 
     def approved_comments(self):
         return self.comments.filter(approved_comment=True)
 
-    was_published_recently.admin_order_field = 'pub_date'
+    def was_published_recently(self):
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.published_date<= now
+
+    was_published_recently.admin_order_field = 'published_date'
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently'
 

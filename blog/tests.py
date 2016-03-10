@@ -8,12 +8,11 @@ from .models import Post
 
 class PostMethodTests(TestCase):
 
-	def test_was_published_recently_with_future_question(self):
+	def test_was_published_recently_with_future_post(self):
 		"""
-		was_published_recently() should return False for questions whose
-		pub_date is in the future.
+		was_published_recently() should return False for posts whose
+		pubblished_date is in the future.
 		"""
-		# To do 
-		# 1. migrate 
-		# 2. check bug in terminal 
-		# 3. revise tests.py here 
+		time = timezone.now() + deltatime.timedelta(days=30)
+		future_post = Post(published_date=time)
+		self.assertEqual(future_post.was_published_recently(), False)
